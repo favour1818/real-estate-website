@@ -18,10 +18,12 @@
 #main-navigation li{
   list-style-type: none;
   padding: 0px;
-  margin: 0px;
+  margin: 0px 1em;
 }
 
-
+#header-text{
+  text-align: center;
+}
 /* search stylings */
 
 #search{
@@ -43,6 +45,15 @@
 #search input{
   margin-top: 5px;
   border: none;
+}
+#search label{
+  color: grey;
+}
+#search input::placeholder{
+  color: black;
+}
+#search input:focus {
+  outline: none;
 }
 #search-button{
   background-color: blue;

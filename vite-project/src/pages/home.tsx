@@ -4,7 +4,7 @@ import InfoBar from "../components/infobar";
 function Home() {
   return (
     <>
-      <h1>Discover the Best Rental Properties with Our Home Rent Service</h1>
+      <h1 id="header-text">Discover the Best Rental Properties with Our Home Rent Service</h1>
       <form action="" id="search">
        <div>
         <label htmlFor="location">Location</label>
