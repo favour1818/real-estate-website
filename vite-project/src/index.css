@@ -1,0 +1,182 @@
+/* navigation stylings */
+#header-nav{
+  padding-inline: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+}
+#header-nav div{
+  display: flex;
+  height: 20px;
+  justify-content: space-between;
+  width: 50%;
+}
+#main-navigation{
+  display: flex;
+  margin: 0px;
+}
+#main-navigation li{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+/* search stylings */
+
+#search{
+  display: flex;
+  margin-inline: auto;
+  padding: 5px;
+  width: fit-content;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+#search div{
+  border-inline-end: 1px solid grey;
+  margin-inline: 10px 5px;
+  padding: 5px 15px 5px 5px;
+}
+#search label{
+  display: block;
+}
+#search input{
+  margin-top: 5px;
+  border: none;
+}
+#search-button{
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: fit-content;
+  padding: .8em 2em;
+  align-self: center;
+}
+
+
+/* display area */
+
+#display-area{
+  margin: 5px 10px;
+}
+
+/* info bar */
+
+#infobar{
+  display: flex;
+  justify-content: space-between;
+}
+#infobar div{
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* slider */
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cccccc92;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(124, 124, 124);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #4bb5436e;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: #4bb543;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* info bar button styling */
+#infobar button{
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: .5em 1em;
+  border: 1px solid grey;
+}
+
+/* card */
+
+.card figure{
+  border-radius: 5px;
+  background-color: grey;
+  width: 50%;
+  margin: 4px;
+}
+.card{
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 45%;
+  height: fit-content;
+}
+#card-content div{
+  display: flex;
+  justify-content: space-between;
+}
+#card-content button{
+  background-color: blue;
+  color: white;
+  border: none;
+  align-content: center;
+}
+#card-content #outline{
+  background-color: transparent;
+  border: 1px solid blue;
+  color: blue;
+}
+#card-content{
+  justify-content: space-between;
+}
