@@ -2,7 +2,7 @@ function HouseCard() {
   return (
     <div className="card">
       <figure>
-        <img src="" alt="" />
+        <img loading="lazy" src="" alt="" />
       </figure>
       <div id="card-content">
         <div id="verification">
