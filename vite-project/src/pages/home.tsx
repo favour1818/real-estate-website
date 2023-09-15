@@ -3,32 +3,34 @@ import HouseCard from "../components/housecard";
 import InfoBar from "../components/infobar";
 
 function Home() {
-  // const [data, setData] = useState("");
-  // const [error, setError] = useState("");
-  const [buttondown, setButtondown]  = useState('not registered')
+  const [data, setData] = useState("");
+  const [error, setError] = useState("");
+  const [buttondown, setButtondown] = useState("not registered");
   useEffect(() => {
-    // const fetchData = async () => {
-    //   const url =
-    //     "https://zillow56.p.rapidapi.com/search?location=houston%2C%20tx";
-    //   const options = {
-    //     method: "GET",
-    //     headers: {
-    //       "X-RapidAPI-Key":
-    //         "1d88e4c0b6msh5ab1048a649da1cp171c1djsn3e7bf100d36b",
-    //       "X-RapidAPI-Host": "zillow56.p.rapidapi.com",
-    //     },
-    //   };
-    //   try {
-    //     const response = await fetch(url, options);
-    //     const result = await response.text();
-    //     setData(result);
-    //   } catch (error) {
-    //     setError(`the ${error} was found`);
-    //     console.log(error);
-    //   }
-    // };
-    // fetchData();
-    console.log('just mounted')
+    const fetchData = async () => {
+      const url =
+        "https://bayut.p.rapidapi.com/properties/detail?externalID=4937770";
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "1d88e4c0b6msh5ab1048a649da1cp171c1djsn3e7bf100d36b",
+          "X-RapidAPI-Host": "bayut.p.rapidapi.com",
+        },
+      };
+      try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        setData(result);
+      } catch (error) {
+        setError(`the ${error} was found`);
+        console.log(error);
+      }
+    };
+    fetchData();
+    console.log(data);
+    console.log(error);
+    console.log(buttondown);
   }, [buttondown]);
 
   return (
@@ -57,10 +59,15 @@ function Home() {
       </form>
       <section id="display-area">
         <InfoBar />
-        <HouseCard />
+        {data.map((result:any) => {<HouseCard  />})}
       </section>
 
-      <button onClick={() => {setButtondown("clicked")}}>Get API</button>
+      <button
+        onClick={() => {
+          setButtondown("clicked on get api");
+        }}>
+        Get API
+      </button>
     </>
   );
 }
