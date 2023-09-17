@@ -30,7 +30,7 @@ function Home() {
     console.log(data);
     console.log(error);
     console.log(buttondown);
-  }, []);
+  }, [buttondown]);
 
   return (
     <>
