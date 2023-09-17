@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import InfoBar from "../components/infobar";
-import HouseCard from "../components/housecard";
+// import HouseCard from "../components/housecard";
 
 function Home() {
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [buttondown, setButtondown] = useState("not registered");
   useEffect(() => {
     const fetchData = async () => {
       const url =
-        "https://bayut.p.rapidapi.com/properties/detail?externalID=4937770";
+        "https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002%2C6020&purpose=for-rent&hitsPerPage=25&page=0&lang=en&sort=city-level-score&rentFrequency=monthly&categoryExternalID=4";
       const options = {
         method: "GET",
         headers: {
@@ -20,8 +20,8 @@ function Home() {
       };
       try {
         const response = await fetch(url, options);
-        const result = await response.text();
-        setData(result);
+        const resultText = await response.json();
+        setData(resultText);
       } catch (error) {
         setError(`the ${error} was found`);
         console.log(error);
@@ -33,6 +33,28 @@ function Home() {
     console.log(buttondown);
   }, [buttondown]);
 
+  // const dataLines = data.split("\n");
+  const dataLines = data
+  const card = dataLines.map((data:any) => {
+    return (
+      // <HouseCard
+      //   key={data.hits.id}
+      //   image={data.coverphoto.url}
+      //   name={data.location[3].name}
+      //   verified={data.verification.status}
+      //   isVerified={data.isVerified}
+      //   ranking
+      //   location={data.location[2].name}
+      //   bedroom={data.rooms}
+      //   bath={data.baths}
+      //   size={data.area}
+      //   parkingNumber={data.rooms}
+      //   price={data.price}
+      //   rentFrequency={data.rentFrequency}
+      // />
+      console.log(data.hits.id)
+    );
+  });
   return (
     <>
       <h1 id="header-text">
@@ -67,8 +89,10 @@ function Home() {
         }}>
         Get API
       </button>
-      <HouseCard/>
-      <h1>{data} while this is an error: {error}</h1>
+      {card}
+
+      <h1> Data Ids:</h1>
+      <p>{data}</p>
     </>
   );
 }
