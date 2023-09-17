@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import InfoBar from "../components/infobar";
+import HouseCard from "../components/housecard";
 
 function Home() {
   const [data, setData] = useState("");
@@ -66,6 +67,8 @@ function Home() {
         }}>
         Get API
       </button>
+      <HouseCard/>
+      <h1>{data} while this is an error: {error}</h1>
     </>
   );
 }

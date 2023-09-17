@@ -1,23 +1,35 @@
-function HouseCard(props:any) {
+function HouseCard({
+  image,
+  name,
+  verified,
+  ranking,
+  location,
+  bedroom,
+  bath,
+  size,
+  parkingNumber,
+  price,
+  rentFrequency,
+}: any) {
   return (
     <div className="card">
       <figure>
-        <img loading="lazy" src={props.image} alt="" />
+        <img loading="lazy" src={image} alt="" />
       </figure>
       <div id="card-content">
         <div id="verification">
-          <span>verified</span>
-          <span>ranking</span>
+          <span>{verified}</span>
+          <span>{ranking}</span>
         </div>
-        <h3 id="figure-header">{props.name}</h3>
-        <p>{props.location}</p>
+        <h3 id="figure-header">{name}</h3>
+        <p>{location}</p>
         <div id="ammeniities">
-          <div>{props.bedroom}</div>
-          <div>{props.bath}</div>
-          <div>{props.size}</div>
-          <div>{props.parkingNumber}</div>
+          <div>{bedroom}</div>
+          <div>{bath}</div>
+          <div>{size}</div>
+          <div>{parkingNumber}</div>
         </div>
-        <span>{props.price}</span>
+        <span>{price} {rentFrequency}</span>
         <button id="outline"> open map</button>
         <button>virtual Tour</button>
       </div>
