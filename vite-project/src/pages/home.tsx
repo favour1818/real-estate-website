@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import HouseCard from "../components/housecard";
 import InfoBar from "../components/infobar";
 
 function Home() {
@@ -31,7 +30,7 @@ function Home() {
     console.log(data);
     console.log(error);
     console.log(buttondown);
-  }, [buttondown]);
+  }, []);
 
   return (
     <>
@@ -59,7 +58,6 @@ function Home() {
       </form>
       <section id="display-area">
         <InfoBar />
-        {data.map((result:any) => {<HouseCard  />})}
       </section>
 
       <button
