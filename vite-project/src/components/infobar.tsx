@@ -1,8 +1,8 @@
-function InfoBar() {
+function InfoBar({hitsPerPage}:any) {
   return (
     <section id="infobar">
       <p>
-        Showing <span></span> search results
+        Showing <span>{hitsPerPage}</span> search results
       </p>
 
       <div>

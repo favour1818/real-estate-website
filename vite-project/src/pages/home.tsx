@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import InfoBar from "../components/infobar";
+import HouseCard from "../components/housecard";
 // import HouseCard from "../components/housecard";
 
 function Home() {
@@ -20,26 +21,41 @@ function Home() {
       };
       try {
         const response = await fetch(url, options);
-        const resultText = await response.json();
-        setData(resultText);
+        const resultText = await response.text();
+        const result = JSON.parse(resultText);
+        setData(result);
+        console.log(error)
+        // return <>{console.log(data)}</>;
       } catch (error) {
         setError(`the ${error} was found`);
         console.log(error);
       }
     };
     fetchData();
-    console.log(data);
-    console.log(error);
     console.log(buttondown);
   }, [buttondown]);
 
-  // const dataLines = data.split("\n");
-  const dataLines = data
-  const card = dataLines.map((data:any) => {
-    return (
-      <HouseCard key={data.hits.id}/>
-    );
-  });
+  const hitsPerPage = data.hitsPerPage;
+
+  // const map =  new Map(newData);
+  // const mappedDate = newData.map((data) => {
+  //   <HouseCard
+  //     image={data.hits[0].coverPhoto.url}
+  //     name={data.hits.coverPhoto.url}
+  // verified={data.hits.verification.status}
+  // ranking={data.hits.bath}
+  // location={data.hits.location.name}
+  // bedroom={data.hits.keywords[1]}
+  // bath={data.hits.baths}
+  // size={data.hits.area}
+  // parkingNumber={data.hits.keywords[1]}
+  // price={data.hits.price}
+  // rentFrequency={data.hits.rentFrequency}
+  // isVerified={data.hits.isVerified}
+
+  //   />;
+  // });
+
   return (
     <>
       <h1 id="header-text">
@@ -65,19 +81,22 @@ function Home() {
         <button id="search-button">Search now</button>
       </form>
       <section id="display-area">
-        <InfoBar />
+        <InfoBar hitsPerPage={hitsPerPage} />
       </section>
 
       <button
         onClick={() => {
           setButtondown("clicked on get api");
+          console.log("-------------------------------");
+          {
+            console.log(data.hits[0].baths);
+            //  const mappedDate = return <HouseCard baths={data.hits[0].baths}/>
+          }
         }}>
         Get API
       </button>
-      {card}
 
       <h1> Data Ids:</h1>
-      <p>{data}</p>
     </>
   );
 }
