@@ -37,22 +37,7 @@ function Home() {
   const dataLines = data
   const card = dataLines.map((data:any) => {
     return (
-      // <HouseCard
-      //   key={data.hits.id}
-      //   image={data.coverphoto.url}
-      //   name={data.location[3].name}
-      //   verified={data.verification.status}
-      //   isVerified={data.isVerified}
-      //   ranking
-      //   location={data.location[2].name}
-      //   bedroom={data.rooms}
-      //   bath={data.baths}
-      //   size={data.area}
-      //   parkingNumber={data.rooms}
-      //   price={data.price}
-      //   rentFrequency={data.rentFrequency}
-      // />
-      console.log(data.hits.id)
+      <HouseCard key={data.hits.id}/>
     );
   });
   return (
