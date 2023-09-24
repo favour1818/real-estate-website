@@ -1,14 +1,15 @@
-import Header from "./components/header"
-import Home from "./pages/home"
+// import Header from "./components/header"
+// import Home from "./pages/home"
 
-// import Test from "./components/test"
+import HomeType from "./components/test"
 
 function App() {
 
   return (
     <>
-      <Header/>
-      <Home/>
+    <HomeType/>
+      {/* <Header/>
+      <Home/> */}
     </>
   )
 }

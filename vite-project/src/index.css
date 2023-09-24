@@ -170,8 +170,8 @@ input:checked + .slider:before {
   display: flex;
   border: 1px solid grey;
   border-radius: 5px;
-  width: 45%;
-  height: fit-content;
+  width: 49%;
+  overflow: hidden;
 }
 #card-content div{
   display: flex;
@@ -190,4 +190,11 @@ input:checked + .slider:before {
 }
 #card-content{
   justify-content: space-between;
+}
+
+.card-display-area{
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 20px;
 }

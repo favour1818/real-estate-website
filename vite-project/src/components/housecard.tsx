@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 function HouseCard({
   image,
@@ -12,21 +12,15 @@ function HouseCard({
   parkingNumber,
   price,
   rentFrequency,
-  isVerified,
 }: any) {
-  const [verificationTicker, setVerificationTicker] = useState("blue");
-
-  isVerified === true
-    ? setVerificationTicker("green")
-    : setVerificationTicker("red");
   return (
     <div className="card">
       <figure>
-        <img loading="lazy" src={image} alt="" />
+        <img src={image} alt="" />
       </figure>
       <div id="card-content">
         <div id="verification">
-          <span style={{ color: verificationTicker }}>{verified}</span>
+          <span>{verified}</span>
           <span>{ranking}</span>
         </div>
         <h3 id="figure-header">{name}</h3>
