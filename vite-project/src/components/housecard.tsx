@@ -15,9 +15,9 @@ function HouseCard({
 }: any) {
   return (
     <div className="card">
-      <figure>
+      {/* <figure> */}
         <img src={image} alt="" />
-      </figure>
+      {/* </figure> */}
       <div id="card-content">
         <div id="verification">
           <span>{verified}</span>

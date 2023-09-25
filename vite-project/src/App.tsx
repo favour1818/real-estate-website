@@ -1,17 +1,16 @@
-// import Header from "./components/header"
+import Header from "./components/header";
 // import Home from "./pages/home"
 
-import HomeType from "./components/test"
+import HomeType from "./components/test";
 
 function App() {
-
   return (
     <>
-    <HomeType/>
-      {/* <Header/>
-      <Home/> */}
+      <Header />
+      <HomeType />
+      {/* <Home/> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
