@@ -7,7 +7,7 @@ interface cardTypes {
   image: "";
   name: "";
   verified: "";
-  ranking: "";
+  score: "";
   location: [
     {
       name: "";
@@ -21,15 +21,12 @@ interface cardTypes {
     {
       name: "";
     },
-    {
-      name: "";
-    }
   ];
   baths: 0;
   rooms: 0;
   area: 0;
   keywords: "";
-  coverphoto: {
+  coverPhoto: {
     url: "";
   };
   size: 0;
@@ -54,7 +51,7 @@ function HomeType() {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            "450ab712bfmshbcdf625d6951de0p1ff76bjsn36bf75377047",
+            "5dacd2fb77msh980e60fc98afb92p12f970jsn6834fd618af3",
           "X-RapidAPI-Host": "bayut.p.rapidapi.com",
         },
       };
@@ -85,16 +82,18 @@ function HomeType() {
           <>
             <HouseCard
               key={uuid()}
-              name={result.location[4].name}
+              name={result.location[3].name}
+              country={result.location[1].name}
               bath={result.baths}
-              image={result.coverphoto?.url}
+              image={result.coverPhoto.url}
               size={Math.round(result.area)}
-              parkingNumber={result.keywords}
+              parkingNumber={result.baths}
               price={result.price}
               rentFrequency={result.rentFrequency}
               isVerified={result.isVerified}
               location={result.location[2].name}
               bedroom={result.rooms}
+              ranking={result.score}
             />
             {console.log(result)}
           </>
