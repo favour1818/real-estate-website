@@ -172,7 +172,7 @@ function HouseCard({
           <strong>AED {price} {rentFrequency}</strong>
           </span>
           <div id="button-placeholder">
-            <button id="outline"> open map</button>
+            <button id="outline" className="button-outline"> open map</button>
             <button>virtual Tour</button>
           </div>
         </div>

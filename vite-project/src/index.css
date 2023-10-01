@@ -1,12 +1,28 @@
+label{
+  font-size: 16px;
+}
+input{
+  font-size: 16px;
+}
 body{
   margin: 0px;
   padding-inline: 1rem;
+  font-family: 'Manrope', sans-serif;
+}
+.root{
+  height: 100vh;
 }
 button{
   display: flex;
+  font-size: 1rem;
 }
 button svg{
   margin-right: 10px;
+}
+
+.icon-name{
+  font-size: larger;
+  font-weight: 800;
 }
 /* navigation stylings */
 #header-nav{
@@ -14,34 +30,59 @@ button svg{
   display: flex;
   justify-content: space-between;
   padding-block: .6rem;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
-#header-nav div{
+
+.profile-area{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.profile-area #profile{
+  /* margin-inline: 2rem 1rem; */
+  display: flex;
+  align-items: center;
+}
 .header-button{
-  padding: .4rem;
+  padding: .7rem;
   height: fit-content;
   width: fit-content;
   border-radius: 100%;
-  border: 1px solid rgb(171, 171, 171);
+  border: 1px solid rgba(128, 128, 128, 0.2);
   background: transparent;
-}
+ }
+ #notification{
+  margin-right: 1rem;
+ }
 .header-button svg{
   margin: 0px;
   height: 16px;
   width: 16px;
 }
+#header-nav #icon-section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 #profile-image{
-  height: 220px;
-  width: 220px;
-  background-color: grey;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
 }
 #profile-notification{
   display: flex;
-  border-right: 1px grey solid;
+  border-right: 1px rgba(128, 128, 128, 0.2) solid;
+  margin-right: 2rem;
+  padding-right: 2rem;
+}
+#profile{
+  display: flex;
+  padding-right: 1rem;
+}
+#profile-content{
+  margin-left: 1rem;
+  display: grid;
+  align-items: center;
 }
 #main-navigation{
   display: flex;
@@ -56,6 +97,10 @@ button svg{
 #header-text{
   text-align: center;
 }
+#header-text #content1::after{
+  content: "\a";
+  white-space: pre;
+}
 /* search stylings */
 
 #search{
@@ -63,11 +108,11 @@ button svg{
   margin-inline: auto;
   padding: 5px;
   width: fit-content;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.2);
   border-radius: 5px;
 }
 #search div{
-  border-inline-end: 1px solid grey;
+  border-inline-end: 1px solid rgba(128, 128, 128, 0.2);
   margin-inline: 10px 5px;
   padding: 5px 15px 5px 5px;
 }
@@ -93,7 +138,7 @@ button svg{
   outline: none;
 }
 #search-button{
-  background-color: blue;
+  background-color: #0587E9;
   color: white;
   border: none;
   border-radius: 5px;
@@ -107,12 +152,13 @@ button svg{
 /* display area */
 
 #display-area{
-  margin: 5px 10px;
+  margin-inline: 10px;
 }
 
 /* info bar */
 
 #infobar{
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,6 +167,7 @@ button svg{
   width: 40%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -148,7 +195,7 @@ button svg{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #cccccc92;
+  background-color: rgba(128, 128, 128, 0.2);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -194,7 +241,7 @@ input:checked + .slider:before {
   width: fit-content;
   height: fit-content;
   padding: .5em 1em;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.2);
   border-radius: 6px;
 }
 
@@ -202,7 +249,7 @@ input:checked + .slider:before {
 
 .card{
   display: flex;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.2);
   border-radius: 5px;
   width: 48%;
   overflow: hidden;
@@ -213,6 +260,7 @@ input:checked + .slider:before {
 #card-content div{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 #card-content button{
   background-color: #0587e9;
@@ -223,7 +271,7 @@ input:checked + .slider:before {
 }
 #card-content #outline{
   background-color: transparent;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.3);
   color: #0587e9;
 }
 #card-content{
@@ -237,10 +285,15 @@ input:checked + .slider:before {
   width: 40%;
   border-radius: 5px;
 }
+#verification span{
+  display: flex;
+  align-items: center;
+}
 .card-display-area{
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  margin-top: 1rem;
 }
 #verification span{
   display: flex;
@@ -252,7 +305,6 @@ input:checked + .slider:before {
 }
 
 #ammeniities{
-  display: flex;
   color: grey;
 }
 #ammeniities svg{
@@ -285,4 +337,47 @@ input:checked + .slider:before {
 }
 #location{
   color: grey;
+}
+
+/* css loader styling */
+
+.loading-screen {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 52%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+  
+.loading-spinner {
+  border: 7px solid #f3f3f3;
+  border-top: 7px solid #808080;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1.5s linear infinite;
+}
+  
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.button-outline:hover{
+  border: 1px solid grey;
+}
+#infobar button:hover{
+  border: 1px solid grey;
+}
+#button-placeholder #outline:hover{
+  border: 1px solid grey
 }
